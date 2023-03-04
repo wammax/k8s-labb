@@ -1,1 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-test-application
+  namespace: argocd
+spec:
+  project: default
 
+  source:
+    repoURL: https://github.com/wammax/k8s-labb
+    targetRevision: HEAD
+    path: app
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: test-app
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
