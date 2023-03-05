@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: new-random-deployment
+  name: new-random-appt
 spec:
   selector:
     matchLabels:
