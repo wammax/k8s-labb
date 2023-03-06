@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: new-random-app
-  replicas: 2
+  replicas: 4
   template:
     metadata:
       labels:
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: new-random-app
-        image: https://hub.docker.com/r/nanajanashia/argocd-app:1.0
+        image: https://hub.docker.com/r/nanajanashia/argocd-app:1.1
         ports:
         - containerPort: 8080
